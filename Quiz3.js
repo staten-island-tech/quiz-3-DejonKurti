@@ -1,4 +1,5 @@
-function calculateTotal(cost) {
+
+/* function calculateTotal(cost) {
    if (cost < 50) {
       tip = cost * (0.2);
    }
@@ -11,12 +12,9 @@ function calculateTotal(cost) {
    return tip + cost;
 }
 
-const cost = [140, 45, 270];
+const tips = [calculateTotal(cost)];
+console.log(tips);  */
 
-const totalPrice = [calculateTotal(cost[0], cost[1], cost[2])];
-console.log(totalPrice);
-
-/* 
 function tipCalculator(bill) {
    let percentage;
    if (bill < 50) {
@@ -28,10 +26,20 @@ function tipCalculator(bill) {
    }
    return percentage + bill;
 }
- const cost = [140, 45, 270];
 
+const bill = [140, 45, 270];
+ 
+const tips = [tipCalculator(bill[0]), tipCalculator(bill[1]), tipCalculator(bill[2])];
 
- */
+const total = [(bill[0] + tips[0]), (bill[1] + tips[1]), (bill[2] + tips[2])];
 
- // const tips = [tipCalculator(bills[0])]
+function hundredFilter(value) {
+    return value >= 100;
+}
 
+const overHundred = total.filter(hundredFilter);
+
+console.log(`The cost of the bills are ${bill}`);
+console.log(`The tips cost ${tips}`);
+console.log(`The total paid amount is ${total}`);
+console.log(`The expenditures over 100 dollars are ${overHundred}`);
